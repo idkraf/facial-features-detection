@@ -34,6 +34,7 @@ gender_net = cv2.dnn.readNet(GENDER_MODEL, GENDER_PROTO)
 
 #             AGE FILES 
 # The age model architecture
+st.write(get_path('deploy_age.prototxt'))
 AGE_PROTO = get_path('deploy_age.prototxt')
 
 # The model pre-trained weights
