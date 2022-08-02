@@ -5,6 +5,7 @@ from PIL import Image
 from streamlit_webrtc import webrtc_streamer
 import av
 import tensorflow as tf
+import os
 
 
 # Each Caffe Model impose the shape of the input image also image preprocessing is required like mean
@@ -13,10 +14,10 @@ MODEL_MEAN_VALUES = (78.4263377603, 87.7689143744, 114.895847746)
 
 #             GENDER FILES               
 # The gender model architecture
-GENDER_MODEL = 'asset/gender_files/deploy_gender.prototxt'
+GENDER_MODEL = os.getcwd()+'/asset/gender_files/deploy_gender.prototxt'
 
 # The gender model pre-trained weights
-GENDER_PROTO = 'asset/gender_files/gender_net.caffemodel'
+GENDER_PROTO = os.getcwd()+'/asset/gender_files/gender_net.caffemodel'
 
 # Represent the gender classes
 GENDER_LIST = ['Male', 'Female']
@@ -27,10 +28,10 @@ gender_net = cv2.dnn.readNet(GENDER_MODEL, GENDER_PROTO)
 
 #             AGE FILES 
 # The age model architecture
-AGE_MODEL = 'asset/age_files/deploy_age.prototxt'
+AGE_MODEL = os.getcwd()+'/asset/age_files/deploy_age.prototxt'
 
 # The model pre-trained weights
-AGE_PROTO = 'asset/age_files/age_net.caffemodel'
+AGE_PROTO = os.getcwd()+'/asset/age_files/age_net.caffemodel'
 
 AGE_INTERVALS = ['(0, 2)', '(4, 6)', '(8, 12)', '(15, 20)', '(25, 32)', '(38, 43)', '(48, 53)', '(60, 100)']
 
@@ -39,11 +40,11 @@ age_net = cv2.dnn.readNet(AGE_MODEL, AGE_PROTO)
 
 
 #             SKIN FEATURES FILES
-model = tf.keras.models.load_model("asset/skin_files/Skin-Type-Recognition")
+model = tf.keras.models.load_model(os.getcwd()+"/asset/skin_files/Skin-Type-Recognition")
 skin_type = ["Dry Skin", "Oily Skin"]
 
 #             FACE DETECTION FILES
-face_cascade = cv2.CascadeClassifier('asset/haarcascades/haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier(os.getcwd()+'/asset/haarcascades/haarcascade_frontalface_default.xml')
 
 # returns an image with the face bounded and the bounding box indeces
 def detect_face(img):
