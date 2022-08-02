@@ -22,7 +22,7 @@ GENDER_PROTO = 'asset/gender_files/gender_net.caffemodel'
 GENDER_LIST = ['Male', 'Female']
 
 # Load gender prediction model
-gender_net = cv2.dnn.readNetFromCaffe(GENDER_MODEL, GENDER_PROTO)
+gender_net = cv2.dnn.readNet(GENDER_MODEL, GENDER_PROTO)
 
 
 #             AGE FILES 
@@ -35,7 +35,7 @@ AGE_PROTO = 'asset/age_files/age_net.caffemodel'
 AGE_INTERVALS = ['(0, 2)', '(4, 6)', '(8, 12)', '(15, 20)', '(25, 32)', '(38, 43)', '(48, 53)', '(60, 100)']
 
 # Load age prediction model
-age_net = cv2.dnn.readNetFromCaffe(AGE_MODEL, AGE_PROTO)
+age_net = cv2.dnn.readNet(AGE_MODEL, AGE_PROTO)
 
 
 #             SKIN FEATURES FILES
