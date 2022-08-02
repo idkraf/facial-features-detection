@@ -14,10 +14,10 @@ MODEL_MEAN_VALUES = (78.4263377603, 87.7689143744, 114.895847746)
 
 #             GENDER FILES               
 # The gender model architecture
-GENDER_MODEL = os.getcwd()+'/asset/gender_files/deploy_gender.prototxt'
+GENDER_PROTO = os.getcwd()+'/asset/gender_files/deploy_gender.prototxt'
 
 # The gender model pre-trained weights
-GENDER_PROTO = os.getcwd()+'/asset/gender_files/gender_net.caffemodel'
+GENDER_MODEL = os.getcwd()+'/asset/gender_files/gender_net.caffemodel'
 
 # Represent the gender classes
 GENDER_LIST = ['Male', 'Female']
@@ -28,10 +28,10 @@ gender_net = cv2.dnn.readNet(GENDER_MODEL, GENDER_PROTO)
 
 #             AGE FILES 
 # The age model architecture
-AGE_MODEL = os.getcwd()+'/asset/age_files/deploy_age.prototxt'
+AGE_PROTO = os.getcwd()+'/asset/age_files/deploy_age.prototxt'
 
 # The model pre-trained weights
-AGE_PROTO = os.getcwd()+'/asset/age_files/age_net.caffemodel'
+AGE_MODEL = os.getcwd()+'/asset/age_files/age_net.caffemodel'
 
 AGE_INTERVALS = ['(0, 2)', '(4, 6)', '(8, 12)', '(15, 20)', '(25, 32)', '(38, 43)', '(48, 53)', '(60, 100)']
 
