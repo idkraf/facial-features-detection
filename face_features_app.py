@@ -170,12 +170,12 @@ def predict_age(img, points):
 # checks whether the person has an oily or dry skin
 def predict_skin(img, points):
     x,y,w,h = points
-    img = img[y:y+h, x:x+w]
+    face_img = img[y:y+h, x:x+w]
 
-    img  = tf.keras.preprocessing.image.img_to_array(img)
-    img = tf.image.resize(img, (224,224))
+    face_img  = tf.keras.preprocessing.image.img_to_array(face_img)
+    face_img = tf.image.resize(face_img, (224,224))
 
-    skin_prob = model.predict(tf.expand_dims(img, axis=0))
+    skin_prob = model.predict(tf.expand_dims(face_img, axis=0))
     skin = skin_type[skin_prob.argmax()]
 
     return skin, skin_prob.max()
