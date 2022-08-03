@@ -168,7 +168,10 @@ def predict_age(img, points):
 
 
 # checks whether the person has an oily or dry skin
-def predict_skin(img):
+def predict_skin(img, points):
+    x,y,w,h = points
+    img = img[y:y+h, x:x+w]
+
     img  = tf.keras.preprocessing.image.img_to_array(img)
     img = tf.image.resize(img, (224,224))
 
@@ -194,7 +197,7 @@ def get_img():
     points = detect_face(frame)
     gender, gender_confidence_score  = predict_gender(frame, points)
     age, age_confidence_score = predict_age(frame, points)
-    skin, skin_prob = predict_skin(upload_img)
+    skin, skin_prob = predict_skin(frame, points)
 
     frame = draw_box(frame, points, gender, gender_confidence_score, age, age_confidence_score, color=(0,0,255))
 
