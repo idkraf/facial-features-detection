@@ -1,7 +1,7 @@
 # facial-features-detection
 Detects the face, gender, age group and skin type of a person in an image.
 
-Task:
+Tambahkan aset untuk:
 - add prediction Acne
 - add prediction Pori pori kulit
 - add prediction dark circle
