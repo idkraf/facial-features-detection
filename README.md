@@ -12,5 +12,6 @@ Tambahkan aset untuk:
 
 Setelah multi prediksi dibuat maka
 - konvert ke module.tflite
+- buat label.txt untuk data modeling prediksi
 - gunakan flutter dengan dependency  tflite_flutter: ^0.10.1
   
