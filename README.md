@@ -2,8 +2,8 @@
 Detects the face, gender, age group and skin type of a person in an image.
 
 Tambahkan aset untuk:
-- add prediction Acne
-- add prediction Pori pori kulit
+- add prediction Acne referensi: https://www.kaggle.com/datasets/nayanchaure/acne-dataset/data
+- add prediction Pori pori kulit https://github.com/illyz2/pore-detection/tree/main
 - add prediction dark circle
 - add prediction wrinkle
 - add prediction blackhead
